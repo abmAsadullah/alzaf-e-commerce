@@ -8,7 +8,7 @@ const Navigation = () => {
   const activePath = usePathname();
   return (
     <div >
-      <div className="top-nav bg-gray-100 flex justify-between px-40 py-2 text-sm">
+      <div className="top-nav bg-gray-100 flex justify-between px-40 py-2 text-xs">
         <div className="top-left-nav">
           <ul className='list-none flex'>
             <li className='pr-10 text-red-400 flex items-center'>
