@@ -1,8 +1,8 @@
 'use client'
 import React from "react";
-import {Input, Card, CardBody} from "@nextui-org/react";
-import {EyeFilledIcon} from "../components/EyeFilledIcon";
-import {EyeSlashFilledIcon} from "../components/EyeSlashFilledIcon";
+// import {Input, Card, CardBody} from "@nextui-org/react";
+// import {EyeFilledIcon} from "../components/EyeFilledIcon";
+// import {EyeSlashFilledIcon} from "../components/EyeSlashFilledIcon";
 
 
 const Register = () => {
@@ -11,7 +11,7 @@ const Register = () => {
 
   return (
     <div className="flex justify-center py-10">
-      <Card className="w-[60%] h-auto rounded px-10 py-5">
+      {/* <Card className="w-[60%] h-auto rounded px-10 py-5">
         <CardBody>
           <div className="flex justify-between">
             <div className="w-[100%] pr-5">
@@ -42,13 +42,8 @@ const Register = () => {
                   type={isVisible ? "text" : "password"}
                   className="border-2 border-gray-300 p-1 rounded-sm my-2"
                 />
-                {/* <Input type="text" className="border-2 border-gray-300 p-1 rounded-sm my-2" placeholder="Phone or Email" /> */}
               </div>
               
-              {/* <div className="input-item">
-                <label htmlFor="phone-email">Confirm Password</label>
-                <Input type="text" className="border-2 border-gray-300 p-1 rounded-sm my-2" placeholder="Phone or Email" />
-              </div> */}
             </div>
 
             <div className="w-[100%] pl-5">
@@ -59,13 +54,10 @@ const Register = () => {
               </div>
               
             </div>
-            {/* <div className="w-[100%] pl-5">
-              <h3>Login</h3>
-              <p>Helllllllllloe roaofa orqra fafa ere Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi, minus et sit, facere molestias deserunt vitae nulla, iste accusantium amet id nihil laboriosam cum dolorem praesentium culpa sunt! Accusantium, nam!</p>
-            </div> */}
+
           </div>
         </CardBody>
-      </Card>
+      </Card> */}
     </div>
   )
 }
