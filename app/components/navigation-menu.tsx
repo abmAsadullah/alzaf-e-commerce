@@ -25,21 +25,21 @@ const NavMenu = async  () => {
         </MenubarTrigger>
         <MenubarContent>
             {menuItems.map((item: {
-              childrens: any;
+              childrens: [];
               id: number; title: string; 
             }) => (
                !item.childrens ? 
-               <MenubarItem>{item.title}</MenubarItem> :
+               <MenubarItem key={item.id}>{item.title}</MenubarItem> :
                 <MenubarSub>
                   <MenubarSubTrigger key={item.id}>{item.title}</MenubarSubTrigger>
                   <MenubarSubContent>
                     {item.childrens.map((subItem: { 
-                      title: string; childrens: any;
+                      title: string; childrens: []; id: number;
                      }) => (
                       !subItem.childrens ? 
-                      <MenubarItem>{subItem.title}</MenubarItem>:
+                      <MenubarItem key={subItem.id}>{subItem.title}</MenubarItem>:
                       <MenubarSub>
-                        <MenubarSubTrigger>{subItem.title}</MenubarSubTrigger>
+                        <MenubarSubTrigger key={subItem.id}>{subItem.title}</MenubarSubTrigger>
                         <MenubarSubContent>
                           {subItem.childrens.map((subSubItem: { id: number; title: string }) => (
                             <MenubarItem key={subSubItem.id}>{subSubItem.title}</MenubarItem>
