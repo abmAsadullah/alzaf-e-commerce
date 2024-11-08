@@ -151,7 +151,7 @@ export default function Registration() {
                     htmlFor="terms"
                     className="text-xs"
                   >
-                    I'd like to receive exclusive offers and promotions via SMS.
+                    {`I'd like to receive exclusive offers and promotions via SMS.`}
                   </label>
                 </div>
                 <button className="w-full bg-orange-500 text-white py-2 mt-3 rounded-sm">Sign Up</button>
