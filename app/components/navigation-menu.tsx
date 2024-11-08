@@ -30,7 +30,7 @@ const NavMenu = async  () => {
             }) => (
                !item.childrens ? 
                <MenubarItem key={item.id}>{item.title}</MenubarItem> :
-                <MenubarSub>
+                <MenubarSub key={item.id}>
                   <MenubarSubTrigger key={item.id}>{item.title}</MenubarSubTrigger>
                   <MenubarSubContent>
                     {item.childrens.map((subItem: { 
@@ -38,7 +38,7 @@ const NavMenu = async  () => {
                      }) => (
                       !subItem.childrens ? 
                       <MenubarItem key={subItem.id}>{subItem.title}</MenubarItem>:
-                      <MenubarSub>
+                      <MenubarSub key={subItem.id}>
                         <MenubarSubTrigger key={subItem.id}>{subItem.title}</MenubarSubTrigger>
                         <MenubarSubContent>
                           {subItem.childrens.map((subSubItem: { id: number; title: string }) => (
