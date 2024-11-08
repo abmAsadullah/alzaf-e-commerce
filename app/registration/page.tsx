@@ -1,10 +1,8 @@
 "use client"
 import React from 'react'
-import Link from "next/link"
 
 import {
   CardTitle,
-  CardDescription,
   CardHeader,
   CardContent,
   CardFooter,
