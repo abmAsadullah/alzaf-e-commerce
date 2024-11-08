@@ -3,8 +3,9 @@ import React from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
-import SearchBar from './search-bar';
+import SearchBar from './navigation-search-bar';
 import Heart, { Cart, User } from './icons';
+import NavMenu from './navigation-menu';
 
 const Navigation = () => {
   const activePath = usePathname();
@@ -33,36 +34,39 @@ const Navigation = () => {
         </div>
       </div>
 
-        <div className="primary-nav bg-white px-40 flex">
-            <div>
-              <Link href='/' className={activePath === '/' ? 'text-red-400' : ''}>
-                <Image
-                  src="/logo.png"
-                  width={150}
-                  height={0}
-                  alt="Alzaf"
-                />
-              </Link>
-            </div>
-            <div className='flex-grow self-center mx-5'>
-              <SearchBar/>
-            </div>
-            <div className='self-center bg-gray-100 rounded-lg p-1 mx-1'>
-              <User/>
-            </div>
-            <div className='self-center bg-gray-100 rounded-lg p-1 mx-1'>
-              <Heart/>
-            </div>
-            <div className='self-center bg-gray-100 rounded-lg p-1 mx-1'>
-              <Cart/>
-            </div>
+      <div className="primary-nav bg-white px-40 flex">
+        <div>
+          <Link href='/' className={activePath === '/' ? 'text-red-400' : ''}>
             <Image
-              src="/cloud-icon.png"
+              src="/logo.png"
               width={150}
               height={0}
-              alt="Cloud Service"
+              alt="Alzaf"
             />
+          </Link>
         </div>
+        <div className='self-end'>
+          <NavMenu />
+        </div>
+        <div className='flex-grow self-center mx-5'>
+          <SearchBar/>
+        </div>
+        <div className='self-center bg-gray-100 rounded-lg p-1 mx-1'>
+          <User/>
+        </div>
+        <div className='self-center bg-gray-100 rounded-lg p-1 mx-1'>
+          <Heart/>
+        </div>
+        <div className='self-center bg-gray-100 rounded-lg p-1 mx-1'>
+          <Cart/>
+        </div>
+        <Image
+          src="/cloud-icon.png"
+          width={150}
+          height={0}
+          alt="Cloud Service"
+        />
+      </div>
     </div>
   )
 }
