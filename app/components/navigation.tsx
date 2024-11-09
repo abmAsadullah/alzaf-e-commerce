@@ -43,6 +43,12 @@ const Navigation = () => {
                 <MenubarMenu>
                   <MenubarTrigger className='border-none bg-gray-100'>▼</MenubarTrigger>
                   <MenubarContent>
+                    <MenubarItem className='text-orange-500'>Our Cloud Service</MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarItem>Profile</MenubarItem>
+                    <MenubarItem>Cart</MenubarItem>
+                    <MenubarItem>Wishlist</MenubarItem>
+                    <MenubarSeparator />
                     <MenubarItem>Help Center</MenubarItem>
                     <MenubarItem>Helpline: 0170000000</MenubarItem>
                     <MenubarSeparator />
@@ -82,7 +88,7 @@ const Navigation = () => {
         <div className='self-center bg-gray-100 rounded-lg p-1 mx-1 hidden md:block'>
           <Cart/>
         </div>
-        <div className='hidden lg:block'>
+        <div className='hidden md:block'>
           <Image
             src="/cloud-icon.png"
             width={150}
