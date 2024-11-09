@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Alzaf E-Commerce Site💱
 
-## Getting Started
+This is an E-Commerce site front page.
 
-First, run the development server:
+<hr/>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![image](https://github.com/user-attachments/assets/967955fd-70e4-40c8-a285-7e1a87177a4b)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<hr />
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Built With
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- HTML/CSS
+- TypeScript
+- React
+- NextJs
+- Tailwind CSS
+- Shad CN
+- API
+- Netlify
+- Github
 
-## Learn More
+## Live Demo
 
-To learn more about Next.js, take a look at the following resources:
+[Live Demo Link](https://alzaf-e-commerce.netlify.app/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Author
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+👤 **A B M Asadullah**
 
-## Deploy on Vercel
+- Github: [@abmasadullah](https://github.com/abmasadullah)
+- Linkedin: [@abmasadullah](https://www.linkedin.com/in/abmasadullah)
+- Website: [@asad.app](https://asad.app/)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+Feel free to check the issues page.
+
+## Show your support
+
+Give a ⭐️ if you like this project!
