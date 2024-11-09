@@ -28,14 +28,14 @@ export default function Registration() {
   return (
     <div className="w-full my-10">
       <form>
-        <Card className='rounded-sm w-[60%] mx-auto px-10 py-5'>
+        <Card className='rounded-sm w-[95%] md:w-[80%] lg:w-[65%] mx-auto px-2 md:px-5 lg:px-8 py-2 md:py-5'>
           <CardHeader className="space-y-1">
             <div className="flex justify-between">
               <CardTitle className="text-2xl">Welcome to Alzaf.com</CardTitle>
               <CardTitle className="text-2xl text-orange-500">Login</CardTitle>
             </div>
           </CardHeader>
-          <div className='grid lg:grid-cols-2'>
+          <div className='grid md:grid-cols-2 gap-0'>
             <div className='left-form'>
               <CardContent className="space-y-1">
                 <div className="space-y-1">
@@ -128,7 +128,7 @@ export default function Registration() {
                         </div>
                       </div>
                     </div>
-                    <div className="gender">
+                    <div className="gender grow">
                       <Label className='mt-0 pt-0' htmlFor="gender">Gender</Label>
                       <Select>
                         <SelectTrigger className="max-w-[180px]  text-gray-500 text-xs">
