@@ -14,7 +14,6 @@ import {
 const NavMenu = async  () => {
   const data = await fetch('https://api.shope.com.bd/api/v1/public/hero-categories');
   const menuItems = await data.json();  
-  console.log(menuItems);
   return (
     <Menubar>
       <MenubarMenu>
