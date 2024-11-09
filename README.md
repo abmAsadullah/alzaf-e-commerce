@@ -22,7 +22,9 @@ This is an E-Commerce site front page.
 
 ## Live Demo
 
-[Live Demo Link](https://alzaf-e-commerce.netlify.app/)
+[Home Page Link](https://alzaf-e-commerce.netlify.app/)
+<br/>
+[Registration Page Link](https://alzaf-e-commerce.netlify.app/registration)
 
 ## Author
 
