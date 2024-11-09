@@ -22,6 +22,9 @@ const NavMenu = async  () => {
           <div className="text-xs">
             Categories ▼
           </div>
+          {/* <div className="text-xs invisible sm:visible">
+            Categories ▼
+          </div> */}
         </MenubarTrigger>
         <MenubarContent>
             {menuItems.map((item: {
