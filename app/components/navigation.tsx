@@ -6,13 +6,21 @@ import Image from 'next/image';
 import SearchBar from './navigation-search-bar';
 import Heart, { Cart, User } from './icons';
 import NavMenu from './navigation-menu';
+import {
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarSeparator,
+  MenubarTrigger,
+} from "@/components/ui/menubar"  
 
 const Navigation = () => {
   const activePath = usePathname();
 
   return (
     <div >
-      <div className="top-nav bg-gray-100 flex justify-between px-40 py-2 text-xs">
+      <div className="top-nav bg-gray-100 flex justify-between px-3 md:px-20 lg:px-40 py-2 text-xs">
         <div className="top-left-nav">
           <ul className='list-none flex'>
             <li className='pr-10 text-red-400 flex items-center'>
@@ -26,15 +34,29 @@ const Navigation = () => {
           </ul>
         </div>
         <div className="top-right-nav">
-          <ul className='list-none flex'>
+          <ul className='list-none flex items-center'>
             <li className='pl-10 hidden md:block'>Become a Seller</li>
             <li className='pl-10 hidden md:block'>Order Track</li>
             <li className='pl-10'><Link href='/registration' className={activePath === '/registration' ? 'text-red-400 font-bold' : 'text-red-400'}>Sign Up / Login</Link></li>
+            <li className='pl-2 block md:hidden'>
+              <Menubar>
+                <MenubarMenu>
+                  <MenubarTrigger className='border-none bg-gray-100'>▼</MenubarTrigger>
+                  <MenubarContent>
+                    <MenubarItem>Help Center</MenubarItem>
+                    <MenubarItem>Helpline: 0170000000</MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarItem>Become a Seller</MenubarItem>
+                    <MenubarItem>Ordar Track</MenubarItem>
+                  </MenubarContent>
+                </MenubarMenu>
+              </Menubar>
+            </li>
           </ul>
         </div>
       </div>
 
-      <div className="primary-nav bg-white px-40 flex">
+      <div className="primary-nav bg-white px-3 md:px-20 lg:px-40 flex justify-between">
         <div>
           <Link href='/' className={activePath === '/' ? 'text-red-400' : ''}>
             <Image
