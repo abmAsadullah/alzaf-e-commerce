@@ -1,5 +1,6 @@
 "use client"
 import React from 'react'
+import Image from 'next/image';
 
 import {
   CardTitle,
@@ -25,7 +26,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 
 export default function Registration() {
   return (
-    <div className="w-full mt-10">
+    <div className="w-full my-10">
       <form>
         <Card className='rounded-sm w-[60%] mx-auto px-10 py-5'>
           <CardHeader className="space-y-1">
@@ -34,7 +35,7 @@ export default function Registration() {
               <CardTitle className="text-2xl text-orange-500">Login</CardTitle>
             </div>
           </CardHeader>
-          <div className='grid md:grid-cols-2'>
+          <div className='grid lg:grid-cols-2'>
             <div className='left-form'>
               <CardContent className="space-y-1">
                 <div className="space-y-1">
@@ -79,10 +80,10 @@ export default function Registration() {
             <div className="right-form">
               <CardContent className="space-y-1 pb-1">
                 <div className="space-y-1">
-                  <div className="flex">
+                  <div className="flex  justify-between">
                     <div className="birthday">
                       <Label className='mt-0 pt-0' htmlFor="birthday">Birthday</Label>
-                      <div className="flex">
+                      <div className="flex justify-between">
                         <div className="mr-1">
                           <Select>
                             <SelectTrigger className="max-w-[180px]  text-gray-500 text-xs text-gray-500 text-xs">
@@ -155,6 +156,24 @@ export default function Registration() {
                   </label>
                 </div>
                 <button className="w-full bg-orange-500 text-white py-2 mt-3 rounded-sm">Sign Up</button>
+                <button className="w-full border-2 border-orange-300 py-1 mt-3 rounded-sm flex justify-center items-center gap-2">
+                  <Image
+                    src="/fb-icon.png"
+                    width={30}
+                    height={0}
+                    alt="Picture of the author"
+                  />
+                  <span>Sign Up with Facebook</span>
+                </button>
+                <button className="w-full border-2 border-orange-300 py-1 mt-3 rounded-sm flex justify-center items-center gap-2">
+                  <Image
+                    src="/google-icon.png"
+                    width={30}
+                    height={0}
+                    alt="Picture of the author"
+                  />
+                  <span>Sign Up with Google</span>
+                </button>
               </CardFooter>
             </div>
 

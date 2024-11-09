@@ -21,14 +21,14 @@ const Navigation = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
               </svg>
             </li>
-            <li className='pr-10'>Help Center</li>
-            <li className='pr-10'>Helpline: 0170000000</li>
+            <li className='pr-10 hidden md:block'>Help Center</li>
+            <li className='pr-10 hidden md:block'>Helpline: 0170000000</li>
           </ul>
         </div>
         <div className="top-right-nav">
           <ul className='list-none flex'>
-            <li className='pl-10'>Become a Seller</li>
-            <li className='pl-10'>Order Track</li>
+            <li className='pl-10 hidden md:block'>Become a Seller</li>
+            <li className='pl-10 hidden md:block'>Order Track</li>
             <li className='pl-10'><Link href='/registration' className={activePath === '/registration' ? 'text-red-400 font-bold' : 'text-red-400'}>Sign Up / Login</Link></li>
           </ul>
         </div>
@@ -48,24 +48,26 @@ const Navigation = () => {
         <div className='self-end'>
           <NavMenu />
         </div>
-        <div className='flex-grow self-center mx-5'>
+        <div className='flex-grow self-center mx-5 hidden md:block'>
           <SearchBar/>
         </div>
-        <div className='self-center bg-gray-100 rounded-lg p-1 mx-1'>
+        <div className='self-center bg-gray-100 rounded-lg p-1 mx-1 hidden md:block'>
           <User/>
         </div>
-        <div className='self-center bg-gray-100 rounded-lg p-1 mx-1'>
+        <div className='self-center bg-gray-100 rounded-lg p-1 mx-1 hidden md:block'>
           <Heart/>
         </div>
-        <div className='self-center bg-gray-100 rounded-lg p-1 mx-1'>
+        <div className='self-center bg-gray-100 rounded-lg p-1 mx-1 hidden md:block'>
           <Cart/>
         </div>
-        <Image
-          src="/cloud-icon.png"
-          width={150}
-          height={0}
-          alt="Cloud Service"
-        />
+        <div className='hidden lg:block'>
+          <Image
+            src="/cloud-icon.png"
+            width={150}
+            height={0}
+            alt="Cloud Service"
+          />
+        </div>
       </div>
     </div>
   )
