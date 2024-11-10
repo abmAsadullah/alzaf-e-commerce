@@ -1,7 +1,7 @@
-'use client'
+// 'use client'
 import React from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation';
+// import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import SearchBar from './navigation-search-bar';
 import Heart, { Cart, User } from './icons';
@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/menubar"  
 
 const Navigation = () => {
-  const activePath = usePathname();
+  // const activePath = usePathname();
 
   return (
     <div >
@@ -37,7 +37,7 @@ const Navigation = () => {
           <ul className='list-none flex items-center'>
             <li className='pl-10 hidden md:block'>Become a Seller</li>
             <li className='pl-10 hidden md:block'>Order Track</li>
-            <li className='pl-10'><Link href='/registration' className={activePath === '/registration' ? 'text-red-400 font-bold' : 'text-red-400'}>Sign Up / Login</Link></li>
+            <li className='pl-10'><Link href='/registration' className='text-orange-500'>Sign Up / Login</Link></li>
             <li className='pl-2 block md:hidden'>
               <Menubar>
                 <MenubarMenu>
@@ -62,7 +62,7 @@ const Navigation = () => {
         </div>
       </div>
 
-      <div className="primary-nav bg-white px-3 md:px-20 lg:px-40 flex justify-between">
+      <div className="primary-nav bg-white p-3 md:px-20 lg:px-40 flex justify-between">
         <div>
           <Link href='/' className='hidden md:block'>
             <Image
