@@ -10,6 +10,7 @@ import {
     MenubarSubTrigger,
     MenubarTrigger,
   } from "@/components/ui/menubar"  
+import Link from 'next/link';
 
 const NavMenu = async  () => {
   const data = await fetch('https://api.shope.com.bd/api/v1/public/hero-categories');
@@ -20,7 +21,7 @@ const NavMenu = async  () => {
         <MenubarMenu>
           <MenubarTrigger>
             <div className="text-xs hidden md:block">
-              Categories ▼
+              Categories<span className='text-white'>.</span>▼
             </div>
             <div className="block md:hidden text-2xl">
               ☰
@@ -29,29 +30,29 @@ const NavMenu = async  () => {
           <MenubarContent>
               {menuItems.map((item: {
                 childrens: [];
-                id: number; title: string; 
+                id: number; title: string;  link:string;
               }) => (
                 !item.childrens ? 
-                <MenubarItem key={item.id}>{item.title}</MenubarItem> :
-                  <MenubarSub key={item.id}>
-                    <MenubarSubTrigger key={item.id}>{item.title}</MenubarSubTrigger>
-                    <MenubarSubContent>
-                      {item.childrens.map((subItem: { 
-                        title: string; childrens: []; id: number;
-                      }) => (
-                        !subItem.childrens ? 
-                        <MenubarItem key={subItem.id}>{subItem.title}</MenubarItem>:
-                        <MenubarSub key={subItem.id}>
-                          <MenubarSubTrigger key={subItem.id}>{subItem.title}</MenubarSubTrigger>
-                          <MenubarSubContent>
-                            {subItem.childrens.map((subSubItem: { id: number; title: string }) => (
-                              <MenubarItem key={subSubItem.id}>{subSubItem.title}</MenubarItem>
-                            ))}
-                          </MenubarSubContent>
-                        </MenubarSub>
-                      ))}
-                    </MenubarSubContent>
-                  </MenubarSub>
+                <Link href={item.link}><MenubarItem key={item.id}>{item.title}</MenubarItem></Link> :
+                <MenubarSub key={item.id}>
+                  <Link href={item.link}><MenubarSubTrigger key={item.id}>{item.title}</MenubarSubTrigger></Link>
+                  <MenubarSubContent>
+                    {item.childrens.map((subItem: { 
+                      title: string; childrens: []; id: number; link:string;
+                    }) => (
+                      !subItem.childrens ? 
+                      <Link href={subItem.link}><MenubarItem key={subItem.id}>{subItem.title}</MenubarItem></Link>:
+                      <MenubarSub key={subItem.id}>
+                        <Link href={subItem.link}><MenubarSubTrigger key={subItem.id}>{subItem.title}</MenubarSubTrigger></Link>
+                        <MenubarSubContent>
+                          {subItem.childrens.map((subSubItem: { id: number; title: string; link: string;}) => (
+                            <Link href={subSubItem.link}><MenubarItem key={subSubItem.id}>{subSubItem.title}</MenubarItem></Link>
+                          ))}
+                        </MenubarSubContent>
+                      </MenubarSub>
+                    ))}
+                  </MenubarSubContent>
+                </MenubarSub>
               ))}
           </MenubarContent>
         </MenubarMenu>

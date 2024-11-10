@@ -1,6 +1,6 @@
 "use client"
-import React from 'react'
-import Image from 'next/image';
+import React, { useState } from 'react'
+import Image from 'next/image'
 
 import {
   CardTitle,
@@ -8,7 +8,7 @@ import {
   CardContent,
   CardFooter,
   Card,
-} from "@/components/ui/card";
+} from "@/components/ui/card"
 
 import {
   Select,
@@ -18,13 +18,83 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label"
+import { Input } from "@/components/ui/input"
 
 import { Checkbox } from "@/components/ui/checkbox"
 
 
 export default function Registration() {
+  const [passwordView, setPasswordView] = useState('password');
+  const [confirmPasswordView, setConfirmPasswordView] = useState('password');
+  const [passwordValidation, setPasswordValidation] = useState([]);
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+
+  const handlePasswordView = () => {
+    passwordView === 'password' ? setPasswordView('text') : setPasswordView('password');
+  }
+
+  const handleConfirmPasswordView = () => {
+    confirmPasswordView === 'password' ? setConfirmPasswordView('text') : setConfirmPasswordView('password');
+  }
+
+  const passwordValue = (event: { target: { value: any } }) => {
+    let validatePasswordText: any[] = [];
+    let count = 0;
+    const password = event.target.value;
+
+    const lowerCasePass = /[a-z]/g;
+    const upperCasePass = /[A-Z]/g;
+    const numberPass = /[0-9]/g;
+    const specialCarPass = /[^a-zA-Z0-9]/g;
+
+    if(!password.match(lowerCasePass)){
+      validatePasswordText.push('❌ A lowercase letter.');
+      count ++;
+    } else {
+      validatePasswordText.push('✅ A lowercase letter.');
+    }
+
+    if(!password.match(upperCasePass)){
+      validatePasswordText.push('❌ An uppercase letter.');
+      count ++;
+    } else {
+      validatePasswordText.push('✅ An uppercase letter.');
+    }
+
+    if(!password.match(numberPass)){
+      validatePasswordText.push('❌ A number.');
+      count ++;
+    } else {
+      validatePasswordText.push('✅ A number.')
+    }
+
+    if(!password.match(specialCarPass)){
+      validatePasswordText.push('❌ A special character.');
+      count ++;
+    } else {
+      validatePasswordText.push('✅ A special character.')
+    }
+
+    if(password.length < 8 ){
+      validatePasswordText.push('❌ Eight digit.');
+      count ++;
+    } else {
+      validatePasswordText.push('✅ Eight digit.')
+    }
+
+    if(count === 0) validatePasswordText = [];
+
+    setPassword(password);
+    setPasswordValidation(validatePasswordText);
+  }
+
+  const confirmPasswordValue = (event: { target: { value: any } }) => {
+    const confirmPassword = event.target.value;
+    setConfirmPassword(confirmPassword);
+  }
+
   return (
     <div className="w-full my-10">
       <form>
@@ -59,21 +129,58 @@ export default function Registration() {
 
                 <div className="space-y-1">
                   <Label className='mt-0 pt-0' htmlFor="password">Password</Label>
-                  <Input
-                    id="password"
-                    name="password"
-                    type="password"
-                    placeholder="Please enter your password"
-                  />
+                  <div className="password-input relative flex">
+                    <Input onChange={passwordValue}
+                      id="password"
+                      name="password"
+                      type={passwordView}
+                      placeholder="Please enter your password"
+                    />
+                     <Image onClick={handlePasswordView}
+                     className='absolute inset-y-0 end-3 self-center cursor-pointer'
+                      src={passwordView === "password" ? "/view.png" : "/hide.png"}
+                      width={30}
+                      height={0}
+                      alt="Picture of the author"
+                      style={{transform: 'scaleX(-1)'}}
+                    />
+                  </div>
+                  <div>
+                    {
+                      (passwordValidation.length !== 0) && 
+                      <h4 className='text-orange-600 font-semibold'>Password requirements: </h4>
+                    }
+                    {
+                      passwordValidation.map((item) => 
+                      <p className='text-orange-500 text-xs' key={item}>{item} </p>
+                    )}
+                  </div>
                 </div>
                 <div className="space-y-1">
                   <Label className='mt-0 pt-0' htmlFor="password">Confirm Password</Label>
-                  <Input
-                    id="password"
-                    name="password"
-                    type="password"
-                    placeholder="Confirm Password"
-                  />
+                  <div className="password-input relative flex">
+                    <Input onChange={confirmPasswordValue}
+                      id="password"
+                      name="password"
+                      type={confirmPasswordView}
+                      placeholder="Confirm password"
+                    />
+                     <Image onClick={handleConfirmPasswordView}
+                     className='absolute inset-y-0 end-3 self-center cursor-pointer'
+                      src={confirmPasswordView === "password" ? "/view.png" : "/hide.png"}
+                      width={30}
+                      height={0}
+                      alt="Picture of the author"
+                      style={{transform: 'scaleX(-1)'}}
+                    />
+                  </div>
+                  <div >
+                    {
+                      confirmPassword.length === 0 ? <p className='text-sm text-orange-600'></p>:
+                      password !== confirmPassword ? <p className='text-sm text-orange-600'>❌ Password not matched!</p> :
+                      <p className='text-sm text-orange-600'>✅ Password matched!</p>
+                    }
+                  </div>
                 </div>
               </CardContent>
             </div>
@@ -176,16 +283,8 @@ export default function Registration() {
                 </button>
               </CardFooter>
             </div>
-
           </div>
-
         </Card>
-        {/* <div className="mt-4 text-center text-sm">
-          Have an account?
-          <Link className="underline ml-2" href="signin">
-            Sing In
-          </Link>
-        </div> */}
       </form>
     </div>
   );

@@ -81,6 +81,9 @@ const Navigation = () => {
             />
           </Link>
         </div>
+        <div className='flex-grow self-center mx-5 block md:hidden'>
+          <SearchBar/>
+        </div>
         <div className='md:self-end self-center'>
           <NavMenu />
         </div>
