@@ -64,7 +64,7 @@ const Navigation = () => {
 
       <div className="primary-nav bg-white px-3 md:px-20 lg:px-40 flex justify-between">
         <div>
-          <Link href='/' className={activePath === '/' ? 'text-red-400' : ''}>
+          <Link href='/' className='hidden md:block'>
             <Image
               src="/logo.png"
               width={150}
@@ -72,8 +72,16 @@ const Navigation = () => {
               alt="Alzaf"
             />
           </Link>
+          <Link href='/' className='block md:hidden'>
+            <Image
+              src="/logo.png"
+              width={100}
+              height={0}
+              alt="Alzaf"
+            />
+          </Link>
         </div>
-        <div className='self-end'>
+        <div className='md:self-end self-center'>
           <NavMenu />
         </div>
         <div className='flex-grow self-center mx-5 hidden md:block'>
