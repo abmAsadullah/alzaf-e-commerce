@@ -18,9 +18,13 @@ const NavMenu = async  () => {
     <Menubar>
       <MenubarMenu>
         <MenubarTrigger>
-          <div className="text-xs">
+          <div className="text-xs hidden md:block">
             Categories ▼
           </div>
+          <div className="block md:hidden text-2xl">
+            ☰
+          </div>
+
           {/* <div className="text-xs invisible sm:visible">
             Categories ▼
           </div> */}
