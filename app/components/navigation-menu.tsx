@@ -33,7 +33,7 @@ const NavMenu = async  () => {
                 id: number; title: string;  link:string;
               }) => (
                 !item.childrens ? 
-                <Link href={item.link}><MenubarItem key={item.id}>{item.title}</MenubarItem></Link> :
+                <Link key={item.id} href={item.link}><MenubarItem key={item.id}>{item.title}</MenubarItem></Link> :
                 <MenubarSub key={item.id}>
                   <Link href={item.link}><MenubarSubTrigger key={item.id}>{item.title}</MenubarSubTrigger></Link>
                   <MenubarSubContent>
@@ -41,12 +41,12 @@ const NavMenu = async  () => {
                       title: string; childrens: []; id: number; link:string;
                     }) => (
                       !subItem.childrens ? 
-                      <Link href={subItem.link}><MenubarItem key={subItem.id}>{subItem.title}</MenubarItem></Link>:
+                      <Link key={subItem.id} href={subItem.link}><MenubarItem key={subItem.id}>{subItem.title}</MenubarItem></Link>:
                       <MenubarSub key={subItem.id}>
                         <Link href={subItem.link}><MenubarSubTrigger key={subItem.id}>{subItem.title}</MenubarSubTrigger></Link>
                         <MenubarSubContent>
                           {subItem.childrens.map((subSubItem: { id: number; title: string; link: string;}) => (
-                            <Link href={subSubItem.link}><MenubarItem key={subSubItem.id}>{subSubItem.title}</MenubarItem></Link>
+                            <Link key={subSubItem.id} href={subSubItem.link}><MenubarItem key={subSubItem.id}>{subSubItem.title}</MenubarItem></Link>
                           ))}
                         </MenubarSubContent>
                       </MenubarSub>
