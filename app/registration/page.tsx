@@ -27,7 +27,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 export default function Registration() {
   const [passwordView, setPasswordView] = useState('password');
   const [confirmPasswordView, setConfirmPasswordView] = useState('password');
-  const [passwordValidation, setPasswordValidation] = useState([]);
+  const [passwordValidation, setPasswordValidation] = useState<any[]>([]);
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
