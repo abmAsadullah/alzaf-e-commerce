@@ -1,6 +1,6 @@
 # Alzaf E-Commerce Site💱
 
-This is an E-Commerce site front page.
+This is an E-Commerce site front page (Client Project).
 
 <hr/>
 
